@@ -5,9 +5,7 @@ import Head from 'next/head';
 import { Suspense } from 'react';
 
 export default async function page({ params }) {
-    const blog = await getPost(params.id);
-
-    const comments = [];
+    const blog = await getPost(params.id);  
 
     return (
         <>
