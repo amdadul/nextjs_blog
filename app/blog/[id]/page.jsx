@@ -1,6 +1,7 @@
 import getPost from '@/app/api/getPost';
 import Comments from '@/app/components/comments';
 import LeaveComment from '@/app/components/LeaveComment';
+import loading from '@/app/loading';
 import Head from 'next/head';
 import { Suspense } from 'react';
 
@@ -19,7 +20,7 @@ export default async function page({ params }) {
                         <p className="text-lg text-gray-700 whitespace-pre-line">{blog.body}</p>
                     </div>
 
-                    <Suspense callback="Loading comments..">
+                    <Suspense callback={<loading></loading>}>
                         <Comments id={params.id}></Comments>
                     </Suspense>
 
